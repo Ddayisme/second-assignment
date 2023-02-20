@@ -1,24 +1,28 @@
-import logo from './logo.svg';
+
 import './App.css';
+import LogInPage from './components/pages/login-page';
+import translationPAge from './components/pages/translation-page'
+
+import {BrowserRouter ,NavLink,Route, Routes} from "react-router-dom";
 
 function App() {
   return (
+    
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+      <p>Test</p>
+  
+      <NavLink to='/'>Login</NavLink>
+    
+    <Routes>
+      <Route path="/" element={<LogInPage/>}>
+
+      </Route>
+    </Routes>
+    
+    </BrowserRouter> 
     </div>
+    
   );
 }
 
