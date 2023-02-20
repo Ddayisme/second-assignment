@@ -1,7 +1,9 @@
+import authGuard from "../authGuard";
+
 function translationPage(){
     return( <div>
         <p>Translation page</p>
     </div>)
 }
 
-export default translationPage;
+export default authGuard(translationPage);
