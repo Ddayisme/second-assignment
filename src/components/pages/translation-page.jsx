@@ -5,7 +5,7 @@ import Translation from "../translation";
 
 function TranslationPage(){
 
-    const [toTranslate, setInput] = useState({});
+    const [toTranslate, setInput] = useState("");
 
     const handleTranslationSubmit = (event) => {
         event.preventDefault();    
