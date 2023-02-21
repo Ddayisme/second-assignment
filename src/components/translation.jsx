@@ -6,10 +6,13 @@ function Translation(props){
     console.log(letters)
 
     const signLetters = letters.map((letter) => {
-        letter = "a.png"
+        letter = "/Images/LostInTranslation_Resources/individial_signs/"+letter
+        console.log(letter)
         return (
             <>
-                <img src={letter}></img>
+                
+                <img src={process.env.PUBLIC_URL + letter}></img>
+
             </>
         )
     })
