@@ -1,5 +1,7 @@
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { addTranslation } from "../../state/translationsSlice";
 
 const apiURL = "https://ripe-eminent-moonflower.glitch.me/translations"
 const apiKEY= "noroff"
@@ -8,6 +10,7 @@ function LogInPage(){
 
     const [name, setName] = useState({value: ""});
     const navigate = useNavigate()
+    const dispatch = useDispatch()
 
     const handleLoginSubmit = (event) => {
         event.preventDefault();
@@ -34,7 +37,11 @@ function LogInPage(){
                 })
             }
             else{
+                console.log(result)
                 localStorage.setItem("userID", result[0].id)
+                result[0].translations.forEach(element => {
+                    dispatch(addTranslation(element))
+                });
             }
         })
         

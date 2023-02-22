@@ -8,8 +8,8 @@ function ProfilePage(){
     
 const translationHistory = useSelector((state) => state.translationHistory)
 
-let translationVar= translationHistory.translationsArray.map(translation=>(
-    <p>{translation.payload}</p>
+let translationVar= translationHistory.translationsArray.map((translation, index) =>(
+    <div key={index}>{translation.payload}</div>
 ))
 
     return <div>
