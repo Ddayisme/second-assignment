@@ -1,15 +1,20 @@
 
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 import authGuard from "../authGuard";
 import Translation from "../translation";
+import { addTranslation } from "../../state/translationsSlice";
 
 function TranslationPage(){
+
+    const dispatch= useDispatch();
 
     const [toTranslate, setInput] = useState("");
 
     const handleTranslationSubmit = (event) => {
-        event.preventDefault();    
-        alert(toTranslate)
+        event.preventDefault();   
+        dispatch(addTranslation(toTranslate))
+        
     }
 
     function handleTranslationChange(event){
