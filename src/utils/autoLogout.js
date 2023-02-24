@@ -10,7 +10,7 @@ export function AutoLogout() {
     (state) => state.translationHistory.translationsArray
   );
   if (translationHistory.length === 0) {
-    localStorage.removeItem("username");
-    localStorage.removeItem("userID");
+    //localStorage.removeItem("username");
+    //localStorage.removeItem("userID");
   }
 }
