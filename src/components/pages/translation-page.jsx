@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import authGuard from "../authGuard";
 import Translation from "../translation";
 import { addTranslation } from "../../state/translationsSlice";
@@ -11,6 +11,12 @@ function TranslationPage(){
     const apiKEY= "noroff"
 
     const dispatch= useDispatch();
+
+    const translationHistory= useSelector((state) => state.translationHistory.translationsArray)
+    let mappedTranslationHistory= [];
+    translationHistory.forEach(element => {
+        mappedTranslationHistory.push(element.payload)
+    });
 
     const [toTranslate, setInput] = useState("");
 
@@ -26,6 +32,7 @@ function TranslationPage(){
     }
 
     function addTranslationToAPI(){
+        console.log(...mappedTranslationHistory)
         fetch(`${apiURL}/${localStorage.getItem("userID")}`, {
             method: 'PATCH', // NB: Set method to PATCH
             headers: {
@@ -34,7 +41,8 @@ function TranslationPage(){
             },
             body: JSON.stringify({
                 // Provide new translations to add to user with id 1
-                translations: [toTranslate]
+            
+                translations:[...mappedTranslationHistory, toTranslate ]
             })
         })
         .then(response => {
