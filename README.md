@@ -16,20 +16,25 @@ TODO: Fill out this long description.
 - [License](#license)
 
 ## Background
-
+```
+Second assignment on Noroff frontend course. This website is translating a given text to signlanguage
+```
 ## Install
 
 ```
+Run npm install in the second-assignment projects folder, then npm run to run the project
 ```
 
 ## Usage
 
 ```
+Login with a user, and use the textfield to translate. See translate history in profile page
 ```
 
 ## Maintainers
 
-[@OddM91](https://github.com/OddM91)
+[@OddM91](https://github.com/OddM91) - Odd Martin Kveseth
+[@Ddayisme](https:/github.com/Ddayisme) - Eivind Skandsen
 
 ## Contributing
 
