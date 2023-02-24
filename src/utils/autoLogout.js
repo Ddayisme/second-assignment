@@ -1,16 +1,16 @@
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 
-export function AutoLogin() {
-  const navigate = useNavigate();
-
+/**
+ * This is an attempt at making it so that if someone refreshes the site
+ * it will log them out because Redux is lost on refreshes.
+ * We tried to make it do a new fetch and append that to Redux, but didn't have time to make it work.
+ */
+export function AutoLogout() {
   const translationHistory = useSelector(
     (state) => state.translationHistory.translationsArray
   );
-  console.log("this one:", translationHistory);
   if (translationHistory.length === 0) {
     localStorage.removeItem("username");
     localStorage.removeItem("userID");
-    navigate("/");
   }
 }

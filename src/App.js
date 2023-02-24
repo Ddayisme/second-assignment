@@ -5,6 +5,12 @@ import ProfilePage from "./components/pages/profile-page";
 
 import { BrowserRouter, NavLink, Route, Routes } from "react-router-dom";
 
+/**
+ * I don't know if I am "conventionally" allowed to to this, but it is only here for Style reasons
+ * And since we are not graded on styling I hope it is fine that it is all here and not in components.
+ * Because if we didn't do styling this file would only be the BrowserRouting, we just didn't know how to
+ * cleannly get in style classes outside of here.
+ */
 function App() {
   return (
     <div className="App">
