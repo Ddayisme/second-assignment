@@ -1,42 +1,112 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Sanchez&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap');
+
+body{
+  margin: 0;
+}
+.App{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1, h2, h4{
+  margin: 0;
+  font-family: Love Ya Like A Sister;
+  color: white;
+}
+h3{
+  font-family: Sanchez;
+  color: white;
+  margin: 0;
+}
+h5{
+  font-size: 16px;
+}
+
+header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #E7B355;
+  border-top: 0px;
+  width: 100%;
+  height: 40px;
+  background-color: #FFC75F;
+  text-align: center;
+}
+main{
+  width: 100%;
+}
+
+nav{
+  padding: 10px;
+  display:flex;
+  justify-content: center;
+  gap: 20px;
+  background-color: #FFC75F;
+  border: 2px solid #E7B355;
+  border-top: 0px;
+  width: 100%;
+  
+}
+
+.topHalf{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: #FFC75F;
+  width: 100%;
+  height: 140px;
+}
+.banner{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.pageContent{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -20px;
+}
+input{
+  border-radius: 25px;
+  padding: 12px 20px;
+}
+button{
+  border-radius: 20px;
+  padding: 8px 12px;
+}
+fieldset {
+  border: 2px solid #845EC2;
+  background-color: white;
+  border-radius: 25px;
+  border-bottom: 0px;
+  padding: 12px 12px;
+}
+
+.history{
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 .TranslationView{
+  margin: 5px;
   display: flex;
   flex-wrap: wrap;
+  border: 2px solid #845EC2;
+  border-radius: 20px;
+  width: 315px;
+  box-shadow: 4px 4px 10px #AAA;
+}
+
+.signImages{
+  width: 50px;
+}
+
+a{
+  font-family: Sanchez;
 }

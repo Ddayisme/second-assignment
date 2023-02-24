@@ -9,7 +9,7 @@ function Translation(props){
         console.log(letter)
         return (
             <div key={index}>
-                <img src={process.env.PUBLIC_URL + letter} alt=""></img>
+                <img className="signImages" src={process.env.PUBLIC_URL + letter} alt=""></img>
             </div>
         )
     })

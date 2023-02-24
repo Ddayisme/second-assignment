@@ -7,13 +7,15 @@ function ProfilePage(){
 
     
 const translationHistory = useSelector((state) => state.translationHistory)
+const user = localStorage.getItem("username")
 
 let translationVar= translationHistory.translationsArray.map((translation, index) =>(
     <div key={index}>{translation.payload}</div>
 ))
 
-    return <div>
-        <p>Profile page</p>
+    return <div className="history">
+        <h5>Translation History</h5>
+        <p><i>For user {user}</i></p>
         {translationVar}
     </div>
 }
