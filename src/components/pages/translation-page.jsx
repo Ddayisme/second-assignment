@@ -32,7 +32,6 @@ function TranslationPage(){
     }
 
     function addTranslationToAPI(){
-        console.log(...mappedTranslationHistory)
         fetch(`${apiURL}/${localStorage.getItem("userID")}`, {
             method: 'PATCH', // NB: Set method to PATCH
             headers: {
