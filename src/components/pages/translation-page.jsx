@@ -19,11 +19,15 @@ function TranslationPage(){
     });
 
     const [toTranslate, setInput] = useState("");
+    const[translateInput, setTranslateInput]= useState("")
 
     const handleTranslationSubmit = (event) => {
+        console.log(event)
         event.preventDefault();   
         dispatch(addTranslation(toTranslate))
         addTranslationToAPI();
+        setTranslateInput(toTranslate)
+        
         
     }
 
@@ -65,7 +69,7 @@ function TranslationPage(){
                 <button type="submit">Translate</button>
             </fieldset>
         </form>
-        <Translation props = {toTranslate}></Translation>
+        <Translation props = {translateInput}></Translation>
     </div>)
 }
 export default authGuard(TranslationPage);

@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import authGuard from "../authGuard";
+import LogOut from "../log-out";
 
 
 
@@ -17,6 +18,7 @@ let translationVar= translationHistory.translationsArray.map((translation, index
         <h5>Translation History</h5>
         <p><i>For user {user}</i></p>
         {translationVar}
+        <LogOut></LogOut>
     </div>
 }
 
