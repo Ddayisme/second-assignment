@@ -1,10 +1,13 @@
 import { useSelector } from "react-redux";
+import { AutoLogin } from "../../state/autoLogin";
 import authGuard from "../authGuard";
 import LogOut from "../log-out";
 
 
 
 function ProfilePage(){
+
+    AutoLogin()
 
     
 const translationHistory = useSelector((state) => state.translationHistory)
