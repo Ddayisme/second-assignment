@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Translation from "./translation";
-import { addTranslation } from "../state/translationsSlice";
+import {
+  addTranslation,
+  removeOverTenHistory,
+} from "../state/translationsSlice";
 
 /**
  * This component generates the input field where you can enter a translation
@@ -27,6 +30,9 @@ function TranslationView() {
 
   const handleTranslationSubmit = (event) => {
     event.preventDefault();
+    while (mappedTranslationHistory.length > 9) {
+      mappedTranslationHistory.shift();
+    }
     dispatch(addTranslation(newTranslation));
     addTranslationToAPI();
     setTranslateInput(newTranslation);
@@ -56,7 +62,7 @@ function TranslationView() {
         return response.json();
       })
       .then((updatedUser) => {
-        // updatedUser is the user with the Patched data
+        dispatch(removeOverTenHistory());
       })
       .catch((error) => {
         console.log("Error");
